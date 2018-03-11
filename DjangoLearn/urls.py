@@ -16,8 +16,16 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 import view
+import testdb
+import search
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello/',view.hello)
+    url(r'^hello/',view.hello),
+    url(r'^testdb/',testdb.adddb),
+    url(r'^getItem/',testdb.getItem),
+    url(r'^search/',search.search),
+    url(r'^search_form/',search.search_form),
+    url(r'^search_post/',search.search_post)
+
 ]
