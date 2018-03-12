@@ -26,6 +26,9 @@ urlpatterns = [
     url(r'^getItem/',testdb.getItem),
     url(r'^search/',search.search),
     url(r'^search_form/',search.search_form),
-    url(r'^search_post/',search.search_post)
+    url(r'^search_post/',search.search_post),
+    url(r'^currenttime/$',view.currenttime),
+    url(r'^time/plus/(\d{1,2})/$',view.hour_head)
+
 
 ]
