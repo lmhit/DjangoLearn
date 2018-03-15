@@ -16,7 +16,7 @@ class  TagInline(admin.TabularInline):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name','email','age')  # list
+    # list_display = ('name','email')  # list
     search_fields = ('name',)
     inlines = [TagInline]
 
@@ -31,6 +31,7 @@ class ContactAdmin(admin.ModelAdmin):
         }]
 
     )
+
 
 
 # Register your models here.

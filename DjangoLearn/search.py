@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import  render_to_response
 
 from django.shortcuts import render
+from books.models import  Book
 
 
 
@@ -29,21 +30,13 @@ def search(request):
 
 
 
-    for v in request.REQUEST:
-        print v
-
-
-    for v in request.COOKIES:
-        print v
-
-
-    if request.POST:
-        print 'search post method'
-    else:
-        print 'search get method'
-
     if 'q' in request.GET:
         message='你搜索的内容为：' + request.GET['q'].encode('UTF-8')
+
+        q = request.GET['q']
+        books = Book.objects.filter(title__icontains=q)
+        return render_to_response('search_result.html',
+                              {'books': books, 'query': q})
     else:
         message = '你搜索的内容为空'
 

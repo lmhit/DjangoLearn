@@ -28,7 +28,8 @@ urlpatterns = [
     url(r'^search_form/',search.search_form),
     url(r'^search_post/',search.search_post),
     url(r'^currenttime/$',view.currenttime),
-    url(r'^time/plus/(\d{1,2})/$',view.hour_head)
+    url(r'^time/plus/(\d{1,2})/$',view.hour_head),
+    url(r'^display_meta/$',view.display_meta)
 
 
 ]
